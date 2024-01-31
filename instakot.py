@@ -1,10 +1,10 @@
 try:
     # Libraries
-    from datetime import datetime
+    from os import listdir, system, mkdir, name
     from string import ascii_letters, digits
     from os.path import dirname, basename
-    from os import listdir, system, name
     from sys import argv, executable
+    from datetime import datetime
     from sys import version_info
     from json import loads
     from time import sleep
@@ -19,8 +19,9 @@ try:
 
 
     # Current Path
-    if name == "nt":PATH = dirname(__file__)+'\\'
-    else:PATH = dirname(__file__)+'/'
+    if name == "nt":PATH = dirname(__file__)+'\\';slash = '\\'
+    else:PATH = dirname(__file__)+'/'; slash = '/'
+    Logs = PATH+"InstaKot_Logs"+slash
 
 
 
@@ -88,6 +89,7 @@ try:
         filename=f"{username}_"
         for x in str(datetime.now()).replace(' ','').replace(':','_'):
             if x == '.':
+                filename += ".txt"
                 break
             filename += x
         subprocess.run([python, "instakotGP.py", username, filename, "username"], capture_output=False)
@@ -100,7 +102,7 @@ try:
         filename=f"{ID}_"
         for x in str(datetime.now()).replace(' ','').replace(':','_'):
             if x == '.':
-                break
+                filename += ".txt"
             filename += x
         subprocess.run([python, "instakotGP.py", str(ID), filename, 'id'], capture_output=False)
         return filename
@@ -141,10 +143,10 @@ try:
 
 
     # Getting instakotGP
-    if "instakotGP.py" not in listdir():
+    if "instakotGP.py" not in listdir(PATH):
         print(f"{b}Downloading instakotGP...{m0}")
         for x in range(4):
-            if "instakotGP.py" in listdir():
+            if "instakotGP.py" in listdir(PATH):
                 print(f"{g}instakotGP Is Downloaded!{m0}")
                 break
             elif x == 4:
@@ -154,6 +156,11 @@ try:
                 print(f"{r}Didn't Work, Trying Again..{m0}")
 
             system(f"curl -s https://raw.githubusercontent.com/the-computer-mayor/computer-mayor-db/main/instakotGP.py > {PATH}instakotGP.py")
+
+
+    # InstaKot Logs
+    try:mkdir(Logs)
+    except:pass
 
 
 
@@ -178,13 +185,13 @@ try:
             if Ls: cls();print(logo);Loading.start();Ls = False
             FileName_ID = GetUsername(Method_INPUT)
 
-            if FileName_ID not in listdir():
+            if FileName_ID not in listdir(Logs):
                 cls();print(logo);print(f"{' '*25}{r}Failed To Connect To Instagram, Check Your Internet Connection.{m0}\n")
                 raise SystemExit
 
             else:
                 stop = True;Loading.join();cls();print(logo)
-                file_id = open(FileName_ID, encoding="utf-8", mode='r')
+                file_id = open(Logs+FileName_ID, encoding="utf-8", mode='r')
                 check = file_id.readlines()[-1]
                 try:
                     username = loads(r''.join(check), strict=False)["data"]["user"]["reel"]["user"]["username"]
@@ -200,11 +207,11 @@ try:
             if stop == False:cls();print(logo);print(f"{' '*45}{b}Getting Profile Info...{m0}\n")
             FileName = GetProfile(username)
 
-            if FileName not in listdir():
+            if FileName not in listdir(Logs):
                 cls();print(logo);print(f"{' '*25}{r}Failed To Connect To Instagram, Check Your Internet Connection.{m0}\n")
                 raise SystemExit
             else:
-                file = open(FileName, encoding="utf-8", mode='r')
+                file = open(Logs+FileName, encoding="utf-8", mode='r')
                 check = file.readlines()[-1]
                 try:
                     data = loads(r''.join(check), strict=False)
