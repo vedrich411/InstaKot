@@ -13,7 +13,8 @@ An Instagram Osint, Find Info About Users And Much More, 𝐔𝐬𝐞 𝐈𝐭 �
    - `curl https://raw.githubusercontent.com/the-computer-mayor/InstaKot/main/instakot.py -o instakot.py`
    - `python3 instakot.py`
 # *Features*
-- No Login Required.
+- Unrequired Login.
+- This Tool Supports Both Instagram `Username`/`ID`.
 - This Tool Is Capable Of Providing Comprehensive Information About An Instagram User.
 - Being Completely Anonymous (Using Multiple SOCKS Proxies).
 - Really Fast. Easy To Use.
