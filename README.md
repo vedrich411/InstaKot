@@ -10,7 +10,7 @@ An Instagram Osint, Find Info About Users And Much More, 𝐔𝐬𝐞 𝐈𝐭 �
 - `Windows`
    - [`Python`](https://www.python.org/downloads)
 # *Installation*
-   - `curl https://raw.githubusercontent.com/the-computer-mayor/InstaKot/main/instakot.py > instakot.py`
+   - `curl https://raw.githubusercontent.com/the-computer-mayor/InstaKot/main/instakot.py -o instakot.py`
    - `python3 instakot.py`
 # *Features*
 - No Login Required.
