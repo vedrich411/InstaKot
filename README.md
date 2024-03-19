@@ -19,6 +19,6 @@ An Instagram Osint, Find Info About Users And Much More, 𝐔𝐬𝐞 𝐈𝐭 �
 - Being Completely Anonymous (Using Multiple SOCKS Proxies).
 - Really Fast. Easy To Use.
 # *Maybe Star?*
-![](https://github.com/the-computer-mayor/vedrich-db/blob/main/InstaKot.png?raw=true)
+![](https://github.com/vedrich411/vedrich-db/blob/main/InstaKot.png?raw=true)
 
 \*this tool was not made to trace someone or stalk its just for testing purposes and maybe scaring your friends ;p\*
