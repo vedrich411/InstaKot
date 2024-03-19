@@ -155,7 +155,7 @@ try:
             elif x > 1:
                 print(f"{r}Didn't Work, Trying Again..{m0}")
 
-            system(f"curl -s https://raw.githubusercontent.com/the-computer-mayor/computer-mayor-db/main/instakotGP.py > {PATH}instakotGP.py")
+            system(f"curl -s https://raw.githubusercontent.com/vedrich411/computer-mayor-db/main/instakotGP.py > {PATH}instakotGP.py")
 
 
     # InstaKot Logs
